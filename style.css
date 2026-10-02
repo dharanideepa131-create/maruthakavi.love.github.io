@@ -1,0 +1,804 @@
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b0b0b;
+    color: #f2eee8;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================
+   LOADER
+========================= */
+
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #0b0b0b;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: opacity 0.8s ease;
+}
+
+.loader-camera {
+    font-size: 45px;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+#loader p {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #aaa;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 25px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    transition: 0.4s;
+}
+
+nav.scrolled {
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(15px);
+    padding: 17px 5%;
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.logo span {
+    color: #b59b7b;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b59b7b;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 25px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.65)
+        ),
+        url("images/maruthakavi-1.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            transparent 20%,
+            rgba(0,0,0,0.65) 100%
+        );
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+
+    animation: heroAppear 2s ease;
+}
+
+@keyframes heroAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.small-title {
+    font-size: 10px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(70px, 12vw, 170px);
+    font-weight: 400;
+    letter-spacing: 8px;
+}
+
+.line {
+    width: 70px;
+    height: 1px;
+    background: #ddd;
+    margin: 25px auto;
+}
+
+.hero-subtitle {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    font-style: italic;
+    margin-bottom: 45px;
+}
+
+.enter-btn,
+.reveal-btn {
+    border: 1px solid rgba(255,255,255,0.6);
+    background: transparent;
+    color: white;
+
+    padding: 17px 30px;
+
+    letter-spacing: 3px;
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+.enter-btn span {
+    margin-left: 20px;
+}
+
+.enter-btn:hover,
+.reveal-btn:hover {
+    background: white;
+    color: black;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 30px;
+
+    font-size: 9px;
+    letter-spacing: 4px;
+
+    opacity: 0.7;
+}
+
+
+/* =========================
+   COMMON SECTIONS
+========================= */
+
+.section {
+    padding: 140px 8%;
+}
+
+.eyebrow {
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: #a99782;
+    margin-bottom: 25px;
+}
+
+.section-heading h2,
+.eyes-content h2,
+.letter h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(50px, 6vw, 90px);
+    line-height: 0.95;
+    font-weight: 400;
+}
+
+.center {
+    text-align: center;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    padding: 180px 15%;
+    text-align: center;
+    background: #111;
+}
+
+.intro h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(45px, 6vw, 85px);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.intro h2 em {
+    color: #b59b7b;
+}
+
+.intro-text {
+    max-width: 550px;
+    margin: 45px auto 0;
+
+    font-size: 14px;
+    line-height: 2;
+
+    color: #aaa;
+}
+
+
+/* =========================
+   PHOTO GRID
+========================= */
+
+.photo-grid {
+    margin-top: 90px;
+
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 30px;
+}
+
+.photo-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-card.large {
+    grid-row: span 2;
+}
+
+.photo-card img {
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+
+    filter: grayscale(15%);
+
+    transition: transform 1s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.05);
+}
+
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 25px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.8)
+    );
+
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.photo-caption span {
+    font-size: 10px;
+}
+
+.photo-caption p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+}
+
+
+/* =========================
+   THROUGH MY EYES
+========================= */
+
+.eyes {
+    background: #141414;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+
+    align-items: center;
+}
+
+.eyes-image {
+    overflow: hidden;
+}
+
+.eyes-image img {
+    height: 700px;
+    object-fit: cover;
+}
+
+.eyes-content p:not(.eyebrow) {
+    max-width: 500px;
+
+    color: #aaa;
+    font-size: 14px;
+    line-height: 2;
+
+    margin-top: 25px;
+}
+
+.signature {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 25px;
+    margin-top: 50px;
+    color: #b59b7b;
+}
+
+
+/* =========================
+   LOVE CARDS
+========================= */
+
+.things {
+    background: #0b0b0b;
+}
+
+.cards {
+    max-width: 1100px;
+    margin: 80px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+
+    background: #333;
+}
+
+.love-card {
+    background: #0b0b0b;
+    padding: 50px 35px;
+
+    min-height: 260px;
+
+    transition: 0.4s;
+}
+
+.love-card:hover {
+    background: #181818;
+}
+
+.love-card span {
+    color: #a99782;
+    font-size: 10px;
+}
+
+.love-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 40px 0 15px;
+}
+
+.love-card p {
+    color: #888;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.story {
+    background: #111;
+}
+
+.timeline {
+    max-width: 900px;
+    margin: 100px auto 0;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+
+    border-top: 1px solid #333;
+
+    padding: 60px 0;
+}
+
+.timeline-number {
+    color: #a99782;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.timeline-date {
+    color: #a99782;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.timeline-content h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    font-weight: 400;
+
+    margin: 15px 0;
+}
+
+.timeline-content p:last-child {
+    color: #888;
+    font-size: 13px;
+    line-height: 2;
+    max-width: 550px;
+}
+
+
+/* =========================
+   FAVORITE PHOTO
+========================= */
+
+.favorite-photo {
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.favorite-photo img {
+    height: 100%;
+    object-fit: cover;
+
+    filter: brightness(0.5);
+}
+
+.favorite-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.favorite-overlay p {
+    font-size: 9px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.favorite-overlay h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(50px, 7vw, 100px);
+    font-weight: 400;
+    line-height: 0.9;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    background: #e8e1d7;
+    color: #171717;
+}
+
+.letter-container {
+    max-width: 750px;
+    margin: auto;
+}
+
+.letter .eyebrow {
+    color: #8a735d;
+}
+
+.letter h2 {
+    margin-bottom: 60px;
+}
+
+.letter-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    line-height: 1.6;
+}
+
+.letter-text p {
+    margin-bottom: 30px;
+}
+
+.letter-signature {
+    margin-top: 70px;
+
+    font-size: 35px;
+    text-align: right;
+}
+
+.letter-signature span {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-style: italic;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final-section {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+.final-content h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(50px, 7vw, 100px);
+    font-weight: 400;
+    line-height: 0.95;
+
+    margin-bottom: 50px;
+}
+
+.secret {
+    display: none;
+
+    max-width: 600px;
+    margin: 80px auto 0;
+
+    animation: reveal 1.2s ease;
+}
+
+.secret.show {
+    display: block;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.secret img {
+    margin-bottom: 50px;
+}
+
+.secret h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 45px;
+    font-weight: 400;
+}
+
+.secret p {
+    color: #999;
+    line-height: 2;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+.heart {
+    font-size: 35px;
+    margin: 40px;
+}
+
+.final-line {
+    color: #f2eee8 !important;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px !important;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #222;
+
+    padding: 70px 8%;
+
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 50px;
+}
+
+footer p {
+    color: #777;
+    font-size: 11px;
+    margin-top: 15px;
+}
+
+.copyright {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links.mobile {
+        display: flex;
+
+        position: absolute;
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        padding: 30px;
+
+        background: #0b0b0b;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+        letter-spacing: 3px;
+    }
+
+    .intro {
+        padding: 120px 10%;
+    }
+
+    .photo-grid {
+        display: block;
+    }
+
+    .photo-card {
+        margin-bottom: 25px;
+    }
+
+    .photo-card img {
+        min-height: 450px;
+    }
+
+    .eyes {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .eyes-image img {
+        height: 500px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        grid-template-columns: 50px 1fr;
+    }
+
+    .timeline-content h3 {
+        font-size: 32px;
+    }
+
+    .letter-text {
+        font-size: 21px;
+    }
+
+    .favorite-photo {
+        height: 70vh;
+    }
+}
+
