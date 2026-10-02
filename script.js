@@ -1,4 +1,3 @@
-```javascript
 /* =========================
    LOADING SCREEN
 ========================= */
@@ -7,15 +6,18 @@ window.addEventListener("load", function () {
 
     const loader = document.getElementById("loader");
 
+    // Keep the loading screen visible for 5 seconds
     setTimeout(() => {
 
+        // Start fading out
         loader.style.opacity = "0";
 
+        // Completely remove it after the fade
         setTimeout(() => {
             loader.style.display = "none";
         }, 800);
 
-    }, 1200);
+    }, 5000);
 
 });
 
@@ -88,4 +90,3 @@ function revealSecret() {
     }, 300);
 
 }
-```
