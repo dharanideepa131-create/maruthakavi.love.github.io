@@ -17,7 +17,7 @@ window.addEventListener("load", function () {
             loader.style.display = "none";
         }, 800);
 
-    }, 5000);
+}, 30000);
 
 });
 
@@ -87,6 +87,6 @@ function revealSecret() {
             block: "center"
         });
 
-    }, 300);
+}, 300);
 
 }
