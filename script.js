@@ -1,11 +1,7 @@
-/* ========================================
-   LOVE WEBSITE JAVASCRIPT
-======================================== */
-
-
-/* ----------------------------------------
+```javascript
+/* =========================
    LOVE SURPRISE
----------------------------------------- */
+========================= */
 
 const loveButton = document.getElementById("loveButton");
 const surprise = document.getElementById("surprise");
@@ -15,30 +11,42 @@ loveButton.addEventListener("click", function () {
   surprise.classList.toggle("show");
 
   if (surprise.classList.contains("show")) {
+
     loveButton.textContent = "I love you too ♡";
+
     createHeartBurst();
+
   } else {
-    loveButton.textContent = "Click for a little surprise 💕";
+
+    loveButton.textContent =
+      "Click for a little surprise 💕";
+
   }
 
 });
 
 
-/* ----------------------------------------
+/* =========================
    FLOATING HEARTS
----------------------------------------- */
+========================= */
 
-const heartsContainer = document.getElementById("hearts");
+const heartsContainer =
+  document.getElementById("hearts");
+
 
 function createHeart() {
 
-  const heart = document.createElement("span");
+  const heart =
+    document.createElement("span");
 
-  heart.className = "floating-heart";
+  heart.className =
+    "floating-heart";
 
-  heart.innerHTML = Math.random() > 0.5 ? "♡" : "♥";
+  heart.innerHTML =
+    Math.random() > 0.5 ? "♡" : "♥";
 
-  heart.style.left = Math.random() * 100 + "%";
+  heart.style.left =
+    Math.random() * 100 + "%";
 
   heart.style.fontSize =
     (12 + Math.random() * 18) + "px";
@@ -51,28 +59,30 @@ function createHeart() {
 
   heartsContainer.appendChild(heart);
 
-  setTimeout(() => {
+  setTimeout(function () {
+
     heart.remove();
+
   }, 15000);
 }
 
 
-/* Create hearts slowly */
-
 setInterval(createHeart, 1200);
 
 
-/* ----------------------------------------
+/* =========================
    HEART BURST
----------------------------------------- */
+========================= */
 
 function createHeartBurst() {
 
   for (let i = 0; i < 18; i++) {
 
-    const heart = document.createElement("span");
+    const heart =
+      document.createElement("span");
 
-    heart.className = "floating-heart";
+    heart.className =
+      "floating-heart";
 
     heart.innerHTML = "♥";
 
@@ -90,20 +100,21 @@ function createHeartBurst() {
 
     heartsContainer.appendChild(heart);
 
-    setTimeout(() => {
+    setTimeout(function () {
+
       heart.remove();
+
     }, 7000);
   }
 }
 
 
-/* ----------------------------------------
+/* =========================
    IMAGE ERROR HANDLING
-   Shows a nice placeholder if an image
-   doesn't exist.
----------------------------------------- */
+========================= */
 
-const images = document.querySelectorAll("img");
+const images =
+  document.querySelectorAll("img");
 
 images.forEach(function (image) {
 
@@ -112,46 +123,57 @@ images.forEach(function (image) {
     this.style.background =
       "linear-gradient(135deg, #ffe7e5, #f8e9ef)";
 
-    this.style.objectFit = "contain";
+    this.style.objectFit =
+      "contain";
 
-    this.alt = "Add your photo here ♡";
+    this.alt =
+      "Add your photo here ♡";
 
   });
 
 });
 
 
-/* ----------------------------------------
+/* =========================
    SCROLL REVEAL
----------------------------------------- */
+========================= */
 
-const sections = document.querySelectorAll(
-  ".story-content, .story-image, .memory-card, .letter"
-);
+const sections =
+  document.querySelectorAll(
+    ".story-content, .story-image, " +
+    ".photo-showcase, .couple-card, .letter"
+  );
 
-const observer = new IntersectionObserver(
-  function (entries) {
 
-    entries.forEach(function (entry) {
+const observer =
+  new IntersectionObserver(
+    function (entries) {
 
-      if (entry.isIntersecting) {
+      entries.forEach(function (entry) {
 
-        entry.target.style.animation =
-          "fadeUp 0.8s ease forwards";
+        if (entry.isIntersecting) {
 
-        observer.unobserve(entry.target);
+          entry.target.style.animation =
+            "fadeUp 0.8s ease forwards";
 
-      }
+          observer.unobserve(entry.target);
 
-    });
+        }
 
-  },
-  {
-    threshold: 0.15
-  }
-);
+      });
+
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
 
 sections.forEach(function (section) {
+
   section.style.opacity = "0";
+
   observer.observe(section);
+
 });
+```
