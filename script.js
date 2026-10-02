@@ -1,4 +1,4 @@
-```javascript
+
 /* =========================
    LOVE SURPRISE
 ========================= */
@@ -176,4 +176,4 @@ sections.forEach(function (section) {
   observer.observe(section);
 
 });
-```
+
