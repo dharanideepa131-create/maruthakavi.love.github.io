@@ -1,99 +1,157 @@
-/* =========================
-   LOADING SCREEN
-========================= */
-
-window.addEventListener("load", function () {
-
-    const loader = document.getElementById("loader");
-
-    // Keep loading screen for 30 seconds
-    setTimeout(function () {
-
-        // Fade out
-        loader.style.opacity = "0";
-
-        // Remove after fade animation
-        setTimeout(function () {
-
-            loader.style.display = "none";
-
-        }, 800);
-
-    }, 30000);
-
-});
+/* ========================================
+   LOVE WEBSITE JAVASCRIPT
+======================================== */
 
 
-/* =========================
-   NAVBAR
-========================= */
+/* ----------------------------------------
+   LOVE SURPRISE
+---------------------------------------- */
 
-window.addEventListener("scroll", function () {
+const loveButton = document.getElementById("loveButton");
+const surprise = document.getElementById("surprise");
 
-    const navbar = document.getElementById("navbar");
+loveButton.addEventListener("click", function () {
 
-    if (window.scrollY > 80) {
+  surprise.classList.toggle("show");
 
-        navbar.classList.add("scrolled");
-
-    } else {
-
-        navbar.classList.remove("scrolled");
-
-    }
+  if (surprise.classList.contains("show")) {
+    loveButton.textContent = "I love you too ♡";
+    createHeartBurst();
+  } else {
+    loveButton.textContent = "Click for a little surprise 💕";
+  }
 
 });
 
 
-/* =========================
-   ENTER STORY
-========================= */
+/* ----------------------------------------
+   FLOATING HEARTS
+---------------------------------------- */
 
-function enterStory() {
+const heartsContainer = document.getElementById("hearts");
 
-    document
-        .getElementById("photographer")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
+function createHeart() {
 
+  const heart = document.createElement("span");
+
+  heart.className = "floating-heart";
+
+  heart.innerHTML = Math.random() > 0.5 ? "♡" : "♥";
+
+  heart.style.left = Math.random() * 100 + "%";
+
+  heart.style.fontSize =
+    (12 + Math.random() * 18) + "px";
+
+  heart.style.animationDuration =
+    (7 + Math.random() * 7) + "s";
+
+  heart.style.animationDelay =
+    Math.random() * 2 + "s";
+
+  heartsContainer.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 15000);
 }
 
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* Create hearts slowly */
 
-function toggleMenu() {
+setInterval(createHeart, 1200);
 
-    const links = document.querySelector(".nav-links");
 
-    links.classList.toggle("mobile");
+/* ----------------------------------------
+   HEART BURST
+---------------------------------------- */
 
+function createHeartBurst() {
+
+  for (let i = 0; i < 18; i++) {
+
+    const heart = document.createElement("span");
+
+    heart.className = "floating-heart";
+
+    heart.innerHTML = "♥";
+
+    heart.style.left =
+      (35 + Math.random() * 30) + "%";
+
+    heart.style.bottom =
+      (30 + Math.random() * 20) + "%";
+
+    heart.style.fontSize =
+      (15 + Math.random() * 20) + "px";
+
+    heart.style.animationDuration =
+      (3 + Math.random() * 3) + "s";
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 7000);
+  }
 }
 
 
-/* =========================
-   SECRET REVEAL
-========================= */
+/* ----------------------------------------
+   IMAGE ERROR HANDLING
+   Shows a nice placeholder if an image
+   doesn't exist.
+---------------------------------------- */
 
-function revealSecret() {
+const images = document.querySelectorAll("img");
 
-    const secret = document.getElementById("secret");
+images.forEach(function (image) {
 
-    const button = document.querySelector(".reveal-btn");
+  image.addEventListener("error", function () {
 
-    secret.classList.add("show");
+    this.style.background =
+      "linear-gradient(135deg, #ffe7e5, #f8e9ef)";
 
-    button.style.display = "none";
+    this.style.objectFit = "contain";
 
-    setTimeout(function () {
+    this.alt = "Add your photo here ♡";
 
-        secret.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
+  });
 
-    }, 300);
+});
 
-}
+
+/* ----------------------------------------
+   SCROLL REVEAL
+---------------------------------------- */
+
+const sections = document.querySelectorAll(
+  ".story-content, .story-image, .memory-card, .letter"
+);
+
+const observer = new IntersectionObserver(
+  function (entries) {
+
+    entries.forEach(function (entry) {
+
+      if (entry.isIntersecting) {
+
+        entry.target.style.animation =
+          "fadeUp 0.8s ease forwards";
+
+        observer.unobserve(entry.target);
+
+      }
+
+    });
+
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+sections.forEach(function (section) {
+  section.style.opacity = "0";
+  observer.observe(section);
+});
