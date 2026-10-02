@@ -1,592 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Maruthakavi — Through My Eyes</title>
+  <title>Our Little Love Story 💕</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-    <!-- LOADING SCREEN -->
-    <div id="loader">
-        <div class="loader-camera">📷</div>
-        <p>Loading a little story...</p>
+  <!-- Floating hearts -->
+  <div class="hearts" id="hearts"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">♡ Our Story</div>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#story">Our Story</a>
+      <a href="#memories">Memories</a>
+      <a href="#letter">Letter</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <p class="small-title">A little place made with love</p>
+
+      <h1>
+        You & Me
+        <span>Forever & Always</span>
+      </h1>
+
+      <p class="hero-text">
+        Some stories are written in books.
+        Ours is written in little moments, smiles,
+        memories and endless love. ♡
+      </p>
+
+      <a href="#story" class="main-button">
+        Begin Our Story
+        <span>♡</span>
+      </a>
+
     </div>
 
+    <div class="hero-photo">
+      <!-- Change this image path to your photo -->
+      <img src="./images/couple.jpg" alt="Our beautiful memory">
+      <div class="photo-decoration">♡</div>
+    </div>
 
-    <!-- NAVIGATION -->
-    <nav id="navbar">
+  </section>
 
-        <div class="logo">
-            M<span>.</span>
-        </div>
 
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#photographer">The Photographer</a>
-            <a href="#eyes">Through My Eyes</a>
-            <a href="#story">Our Story</a>
-            <a href="#letter">Letter</a>
-        </div>
+  <!-- Love quote -->
+  <section class="quote-section">
 
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="quote-card">
+      <span class="quote-mark">“</span>
 
-    </nav>
+      <p>
+        In a world full of people,
+        somehow my heart found yours.
+      </p>
 
+      <span class="quote-heart">♡</span>
+    </div>
 
-    <!-- HERO -->
-    <section id="home" class="hero">
+  </section>
 
-        <div class="hero-overlay"></div>
 
-        <div class="hero-content">
+  <!-- Story -->
+  <section class="story section" id="story">
 
-            <p class="small-title">A LITTLE WEBSITE FOR</p>
+    <div class="section-heading">
+      <p>THE BEGINNING</p>
+      <h2>Our Little Story</h2>
+      <span>♡</span>
+    </div>
 
-            <h1>MARUTHAKAVI</h1>
+    <div class="story-grid">
 
-            <div class="line"></div>
+      <div class="story-image">
+        <img src="./images/memory1.jpg" alt="Our memory">
+      </div>
 
-            <p class="hero-subtitle">
-                Through my eyes.
-            </p>
+      <div class="story-content">
 
-            <button class="enter-btn" onclick="enterStory()">
-                ENTER HIS WORLD
-                <span>→</span>
-            </button>
+        <span class="story-number">01</span>
 
-        </div>
-
-        <div class="scroll">
-            SCROLL ↓
-        </div>
-
-    </section>
-
-
-    <!-- INTRO -->
-    <section class="intro">
-
-        <p class="eyebrow">A PHOTOGRAPHER</p>
-
-        <h2>
-            Some people take photographs.
-            <br>
-            <em>You make moments stay.</em>
-        </h2>
-
-        <p class="intro-text">
-            You spend your time looking through a lens,
-            searching for light, stories and beautiful moments.
-            But this time, I wanted to show you something
-            through a different lens.
-        </p>
-
-    </section>
-
-
-    <!-- PHOTOGRAPHER -->
-    <section id="photographer" class="photographer section">
-
-        <div class="section-heading">
-
-            <p class="eyebrow">01 — THE PHOTOGRAPHER</p>
-
-            <h2>
-                The man<br>
-                behind the lens.
-            </h2>
-
-        </div>
-
-
-        <div class="photo-grid">
-
-            <div class="photo-card large">
-
-                <img src="images/maruthakavi-1.jpg" alt="Maruthakavi">
-
-                <div class="photo-caption">
-                    <span>01</span>
-                    <p>The way you see the world.</p>
-                </div>
-
-            </div>
-
-
-            <div class="photo-card">
-
-                <img src="images/maruthakavi-2.jpg" alt="Maruthakavi photography">
-
-                <div class="photo-caption">
-                    <span>02</span>
-                    <p>Light. Stories. Moments.</p>
-                </div>
-
-            </div>
-
-
-            <div class="photo-card">
-
-                <img src="images/maruthakavi-3.jpg" alt="Photography">
-
-                <div class="photo-caption">
-                    <span>03</span>
-                    <p>Every frame has a story.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- THROUGH MY EYES -->
-    <section id="eyes" class="eyes section">
-
-        <div class="eyes-image">
-
-            <img src="images/maruthakavi-1.jpg" alt="Maruthakavi">
-
-        </div>
-
-
-        <div class="eyes-content">
-
-            <p class="eyebrow">02 — THROUGH MY EYES</p>
-
-            <h2>
-                You spend so much
-                time behind the camera.
-            </h2>
-
-            <p>
-                So I thought, for once, I'd tell you
-                what I see.
-            </p>
-
-            <p>
-                I see someone who notices little things.
-                Someone who can turn an ordinary moment
-                into a memory.
-            </p>
-
-            <p>
-                Someone whose passion shows in the way
-                he looks at the world.
-            </p>
-
-            <p>
-                And someone who, without even trying,
-                became someone very special to me.
-            </p>
-
-            <div class="signature">
-                — Through my eyes.
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- LITTLE THINGS -->
-    <section class="things section">
-
-        <div class="section-heading center">
-
-            <p class="eyebrow">03 — LITTLE THINGS</p>
-
-            <h2>
-                Things I notice<br>
-                about you.
-            </h2>
-
-        </div>
-
-
-        <div class="cards">
-
-            <div class="love-card">
-
-                <span>01</span>
-
-                <h3>Your passion</h3>
-
-                <p>
-                    The way you talk about photography
-                    when you're genuinely excited.
-                </p>
-
-            </div>
-
-
-            <div class="love-card">
-
-                <span>02</span>
-
-                <h3>Your smile</h3>
-
-                <p>
-                    Especially the ones you don't realize
-                    someone is watching.
-                </p>
-
-            </div>
-
-
-            <div class="love-card">
-
-                <span>03</span>
-
-                <h3>Your creativity</h3>
-
-                <p>
-                    You don't just see things.
-                    You see them differently.
-                </p>
-
-            </div>
-
-
-            <div class="love-card">
-
-                <span>04</span>
-
-                <h3>Your little habits</h3>
-
-                <p>
-                    The tiny things you probably
-                    don't even know I notice.
-                </p>
-
-            </div>
-
-
-            <div class="love-card">
-
-                <span>05</span>
-
-                <h3>Your kindness</h3>
-
-                <p>
-                    The little things always matter
-                    more than you think.
-                </p>
-
-            </div>
-
-
-            <div class="love-card">
-
-                <span>06</span>
-
-                <h3>You</h3>
-
-                <p>
-                    Honestly... I could keep writing.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- OUR STORY -->
-    <section id="story" class="story section">
-
-        <div class="section-heading center">
-
-            <p class="eyebrow">04 — OUR STORY</p>
-
-            <h2>
-                Little moments.<br>
-                Big memories.
-            </h2>
-
-        </div>
-
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-
-                <div class="timeline-number">
-                    01
-                </div>
-
-                <div class="timeline-content">
-
-                    <p class="timeline-date">
-                        THE BEGINNING
-                    </p>
-
-                    <h3>
-                        When I first noticed you.
-                    </h3>
-
-                    <p>
-                        Replace this with the story of
-                        how you first met or first noticed him.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-number">
-                    02
-                </div>
-
-                <div class="timeline-content">
-
-                    <p class="timeline-date">
-                        THE MOMENT
-                    </p>
-
-                    <h3>
-                        When things started feeling different.
-                    </h3>
-
-                    <p>
-                        Add your favorite memory here.
-                        Something only the two of you understand.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-number">
-                    03
-                </div>
-
-                <div class="timeline-content">
-
-                    <p class="timeline-date">
-                        NOW
-                    </p>
-
-                    <h3>
-                        And here we are.
-                    </h3>
-
-                    <p>
-                        Still creating memories.
-                        Still collecting little moments.
-                        Still writing the next chapter.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FAVORITE PHOTO -->
-    <section class="favorite-photo">
-
-        <img src="images/us-1.jpg" alt="Favorite memory">
-
-        <div class="favorite-overlay">
-
-            <p>
-                IF I COULD KEEP ONE MOMENT FOREVER...
-            </p>
-
-            <h2>
-                It would be<br>
-                one with you.
-            </h2>
-
-        </div>
-
-    </section>
-
-
-    <!-- LETTER -->
-    <section id="letter" class="letter section">
-
-        <div class="letter-container">
-
-            <p class="eyebrow">
-                05 — A LETTER
-            </p>
-
-            <h2>
-                Dear Maruthakavi,
-            </h2>
-
-
-            <div class="letter-text">
-
-                <p>
-                    I don't know if I can put everything
-                    I feel into a website.
-                </p>
-
-                <p>
-                    But I wanted to try.
-                </p>
-
-                <p>
-                    You spend your time capturing beautiful
-                    things through your camera.
-                    I hope you know that, somewhere along
-                    the way, you became one of those beautiful
-                    things in my life.
-                </p>
-
-                <p>
-                    I love the way you see the world.
-                    I love your passion.
-                    I love the little things about you
-                    that you probably don't even realize I notice.
-                </p>
-
-                <p>
-                    And I love the memories we've created.
-                </p>
-
-                <p>
-                    Maybe this website is a little silly.
-                    Maybe it's a little cheesy.
-                    But I made it because you're worth
-                    doing something a little crazy for.
-                </p>
-
-                <p>
-                    So here's to the photographs you haven't
-                    taken yet.
-                    The places you haven't seen.
-                    And all the memories still waiting for us.
-                </p>
-
-                <p>
-                    Keep chasing the light, photographer.
-                </p>
-
-                <p>
-                    I'll be somewhere in the frame.
-                </p>
-
-            </div>
-
-
-            <div class="letter-signature">
-
-                ❤️<br>
-
-                <span>
-                    Someone who sees you differently.
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FINAL SURPRISE -->
-    <section class="final-section">
-
-        <div class="final-content">
-
-            <p class="eyebrow">
-                ONE LAST SHOT
-            </p>
-
-            <h2>
-                Want to see<br>
-                my favorite photograph?
-            </h2>
-
-            <button class="reveal-btn" onclick="revealSecret()">
-                REVEAL →
-            </button>
-
-
-            <div id="secret" class="secret">
-
-                <img src="images/us-2.jpg" alt="Our favorite photo">
-
-                <h3>
-                    My favorite photograph...
-                </h3>
-
-                <p>
-                    ...is probably the one I haven't
-                    taken yet.
-                </p>
-
-                <p>
-                    The one where we're somewhere
-                    we've never been,
-                    laughing about something completely stupid,
-                    and neither of us realizes
-                    it's going to become a memory.
-                </p>
-
-                <div class="heart">
-                    ♥
-                </div>
-
-                <p class="final-line">
-                    Keep clicking.<br>
-                    Keep creating.<br>
-                    Keep being you.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <div class="footer-logo">
-            M.
-        </div>
+        <h3>It all started with you...</h3>
 
         <p>
-            Made with love for Maruthakavi.
+          There was something special about the way our story began.
+          Maybe it was a simple conversation, a smile, or just the
+          right moment at the right time.
         </p>
 
-        <p class="copyright">
-            © 2026 — Through My Eyes
+        <p>
+          Whatever it was, I'm grateful it brought you into my life.
+          Since then, ordinary days have become beautiful memories.
         </p>
 
-    </footer>
+        <div class="signature">
+          With all my heart,
+          <strong>♡ Me</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
-    <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
+  <!-- Memories -->
+  <section class="memories section" id="memories">
+
+    <div class="section-heading">
+      <p>OUR FAVORITE MOMENTS</p>
+      <h2>Little Memories</h2>
+      <span>♡</span>
+    </div>
+
+    <div class="gallery">
+
+      <div class="memory-card">
+        <img src="./images/memory1.jpg" alt="Memory one">
+        <div class="memory-caption">
+          <span>♡</span>
+          <p>A beautiful day</p>
+        </div>
+      </div>
+
+      <div class="memory-card tall">
+        <img src="./images/memory2.jpg" alt="Memory two">
+        <div class="memory-caption">
+          <span>♡</span>
+          <p>Just us</p>
+        </div>
+      </div>
+
+      <div class="memory-card">
+        <img src="./images/memory3.jpg" alt="Memory three">
+        <div class="memory-caption">
+          <span>♡</span>
+          <p>Happy moments</p>
+        </div>
+      </div>
+
+      <div class="memory-card">
+        <img src="./images/memory4.jpg" alt="Memory four">
+        <div class="memory-caption">
+          <span>♡</span>
+          <p>Forever memories</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Love letter -->
+  <section class="letter-section section" id="letter">
+
+    <div class="letter">
+
+      <div class="letter-flower">✿</div>
+
+      <p class="letter-small">A LETTER FOR YOU</p>
+
+      <h2>To My Favorite Person</h2>
+
+      <div class="letter-line"></div>
+
+      <p>
+        I don't need a perfect life.
+        I just want a life filled with moments
+        where I get to laugh with you, talk with you,
+        grow with you and love you.
+      </p>
+
+      <p>
+        Thank you for being one of the most beautiful
+        parts of my story.
+      </p>
+
+      <p class="final-line">
+        Wherever life takes us,
+        I hope we keep choosing each other. ♡
+      </p>
+
+      <button class="love-button" id="loveButton">
+        Click for a little surprise 💕
+      </button>
+
+      <div id="surprise" class="surprise">
+        You are loved more than words can say. ♡
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <div class="footer-heart">♡</div>
+
+    <h3>Our Story</h3>
+
+    <p>
+      Made with love, for someone special.
+    </p>
+
+    <div class="footer-line"></div>
+
+    <small>Forever starts with us ♡</small>
+
+  </footer>
+
+
+  <script src="./script.js"></script>
 
 </body>
 </html>
