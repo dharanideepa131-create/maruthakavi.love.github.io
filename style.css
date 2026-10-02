@@ -1,4 +1,3 @@
-
 /* =========================
    BASIC RESET
 ========================= */
@@ -31,19 +30,24 @@ button {
 
 
 /* =========================
-   LOADER
+   LOADING SCREEN
 ========================= */
 
 #loader {
     position: fixed;
     inset: 0;
+
     background: #0b0b0b;
+
     z-index: 9999;
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
+
+    opacity: 1;
 
     transition: opacity 0.8s ease;
 }
@@ -51,18 +55,24 @@ button {
 .loader-camera {
     font-size: 45px;
     margin-bottom: 20px;
+
     animation: pulse 1.5s infinite;
 }
 
 #loader p {
     font-size: 11px;
+
     letter-spacing: 4px;
+
     text-transform: uppercase;
+
     color: #aaa;
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
     }
 
@@ -78,13 +88,16 @@ button {
 
 nav {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
 
     padding: 25px 5%;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
@@ -95,13 +108,17 @@ nav {
 
 nav.scrolled {
     background: rgba(10, 10, 10, 0.92);
+
     backdrop-filter: blur(15px);
+
     padding: 17px 5%;
 }
 
 .logo {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 32px;
+
     font-weight: 600;
 }
 
@@ -111,15 +128,21 @@ nav.scrolled {
 
 .nav-links {
     display: flex;
+
     gap: 30px;
 }
 
 .nav-links a {
     color: white;
+
     text-decoration: none;
+
     font-size: 10px;
+
     letter-spacing: 2px;
+
     text-transform: uppercase;
+
     transition: 0.3s;
 }
 
@@ -129,10 +152,16 @@ nav.scrolled {
 
 .menu-btn {
     display: none;
+
     background: none;
+
     color: white;
+
     border: none;
+
     font-size: 25px;
+
+    cursor: pointer;
 }
 
 
@@ -146,88 +175,110 @@ nav.scrolled {
     position: relative;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     background:
         linear-gradient(
-            rgba(0,0,0,0.35),
-            rgba(0,0,0,0.65)
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.65)
         ),
         url("images/maruthakavi-1.jpg");
 
     background-size: cover;
+
     background-position: center;
 }
 
 .hero-overlay {
     position: absolute;
+
     inset: 0;
 
     background:
         radial-gradient(
             circle,
             transparent 20%,
-            rgba(0,0,0,0.65) 100%
+            rgba(0, 0, 0, 0.65) 100%
         );
 }
 
 .hero-content {
     position: relative;
+
     text-align: center;
+
     z-index: 2;
 
     animation: heroAppear 2s ease;
 }
 
 @keyframes heroAppear {
+
     from {
         opacity: 0;
+
         transform: translateY(30px);
     }
 
     to {
         opacity: 1;
+
         transform: translateY(0);
     }
 }
 
 .small-title {
     font-size: 10px;
+
     letter-spacing: 5px;
+
     margin-bottom: 25px;
 }
 
 .hero h1 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: clamp(70px, 12vw, 170px);
+
     font-weight: 400;
+
     letter-spacing: 8px;
 }
 
 .line {
     width: 70px;
+
     height: 1px;
+
     background: #ddd;
+
     margin: 25px auto;
 }
 
 .hero-subtitle {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 28px;
+
     font-style: italic;
+
     margin-bottom: 45px;
 }
 
 .enter-btn,
 .reveal-btn {
-    border: 1px solid rgba(255,255,255,0.6);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
     background: transparent;
+
     color: white;
 
     padding: 17px 30px;
 
     letter-spacing: 3px;
+
     font-size: 10px;
 
     cursor: pointer;
@@ -242,14 +293,17 @@ nav.scrolled {
 .enter-btn:hover,
 .reveal-btn:hover {
     background: white;
+
     color: black;
 }
 
 .scroll {
     position: absolute;
+
     bottom: 30px;
 
     font-size: 9px;
+
     letter-spacing: 4px;
 
     opacity: 0.7;
@@ -266,8 +320,11 @@ nav.scrolled {
 
 .eyebrow {
     font-size: 9px;
+
     letter-spacing: 4px;
+
     color: #a99782;
+
     margin-bottom: 25px;
 }
 
@@ -275,8 +332,11 @@ nav.scrolled {
 .eyes-content h2,
 .letter h2 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: clamp(50px, 6vw, 90px);
+
     line-height: 0.95;
+
     font-weight: 400;
 }
 
@@ -291,14 +351,19 @@ nav.scrolled {
 
 .intro {
     padding: 180px 15%;
+
     text-align: center;
+
     background: #111;
 }
 
 .intro h2 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: clamp(45px, 6vw, 85px);
+
     font-weight: 400;
+
     line-height: 1;
 }
 
@@ -308,9 +373,11 @@ nav.scrolled {
 
 .intro-text {
     max-width: 550px;
+
     margin: 45px auto 0;
 
     font-size: 14px;
+
     line-height: 2;
 
     color: #aaa;
@@ -325,12 +392,15 @@ nav.scrolled {
     margin-top: 90px;
 
     display: grid;
+
     grid-template-columns: 1.4fr 1fr;
+
     gap: 30px;
 }
 
 .photo-card {
     position: relative;
+
     overflow: hidden;
 }
 
@@ -340,7 +410,9 @@ nav.scrolled {
 
 .photo-card img {
     height: 100%;
+
     min-height: 400px;
+
     object-fit: cover;
 
     filter: grayscale(15%);
@@ -354,19 +426,23 @@ nav.scrolled {
 
 .photo-caption {
     position: absolute;
+
     bottom: 0;
     left: 0;
     right: 0;
 
     padding: 25px;
 
-    background: linear-gradient(
-        transparent,
-        rgba(0,0,0,0.8)
-    );
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.8)
+        );
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: end;
 }
 
@@ -376,6 +452,7 @@ nav.scrolled {
 
 .photo-caption p {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 22px;
 }
 
@@ -388,7 +465,9 @@ nav.scrolled {
     background: #141414;
 
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 100px;
 
     align-items: center;
@@ -400,6 +479,7 @@ nav.scrolled {
 
 .eyes-image img {
     height: 700px;
+
     object-fit: cover;
 }
 
@@ -407,7 +487,9 @@ nav.scrolled {
     max-width: 500px;
 
     color: #aaa;
+
     font-size: 14px;
+
     line-height: 2;
 
     margin-top: 25px;
@@ -415,9 +497,13 @@ nav.scrolled {
 
 .signature {
     font-family: "Cormorant Garamond", serif;
+
     font-style: italic;
+
     font-size: 25px;
+
     margin-top: 50px;
+
     color: #b59b7b;
 }
 
@@ -432,10 +518,13 @@ nav.scrolled {
 
 .cards {
     max-width: 1100px;
+
     margin: 80px auto 0;
 
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 1px;
 
     background: #333;
@@ -443,6 +532,7 @@ nav.scrolled {
 
 .love-card {
     background: #0b0b0b;
+
     padding: 50px 35px;
 
     min-height: 260px;
@@ -456,19 +546,25 @@ nav.scrolled {
 
 .love-card span {
     color: #a99782;
+
     font-size: 10px;
 }
 
 .love-card h3 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 30px;
+
     font-weight: 400;
+
     margin: 40px 0 15px;
 }
 
 .love-card p {
     color: #888;
+
     font-size: 12px;
+
     line-height: 1.8;
 }
 
@@ -483,11 +579,13 @@ nav.scrolled {
 
 .timeline {
     max-width: 900px;
+
     margin: 100px auto 0;
 }
 
 .timeline-item {
     display: grid;
+
     grid-template-columns: 100px 1fr;
 
     border-top: 1px solid #333;
@@ -497,19 +595,25 @@ nav.scrolled {
 
 .timeline-number {
     color: #a99782;
+
     font-size: 11px;
+
     letter-spacing: 2px;
 }
 
 .timeline-date {
     color: #a99782;
+
     font-size: 9px;
+
     letter-spacing: 3px;
 }
 
 .timeline-content h3 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 40px;
+
     font-weight: 400;
 
     margin: 15px 0;
@@ -517,8 +621,11 @@ nav.scrolled {
 
 .timeline-content p:last-child {
     color: #888;
+
     font-size: 13px;
+
     line-height: 2;
+
     max-width: 550px;
 }
 
@@ -529,12 +636,15 @@ nav.scrolled {
 
 .favorite-photo {
     height: 90vh;
+
     position: relative;
+
     overflow: hidden;
 }
 
 .favorite-photo img {
     height: 100%;
+
     object-fit: cover;
 
     filter: brightness(0.5);
@@ -542,12 +652,15 @@ nav.scrolled {
 
 .favorite-overlay {
     position: absolute;
+
     inset: 0;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
@@ -555,14 +668,19 @@ nav.scrolled {
 
 .favorite-overlay p {
     font-size: 9px;
+
     letter-spacing: 4px;
+
     margin-bottom: 25px;
 }
 
 .favorite-overlay h2 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: clamp(50px, 7vw, 100px);
+
     font-weight: 400;
+
     line-height: 0.9;
 }
 
@@ -573,11 +691,13 @@ nav.scrolled {
 
 .letter {
     background: #e8e1d7;
+
     color: #171717;
 }
 
 .letter-container {
     max-width: 750px;
+
     margin: auto;
 }
 
@@ -591,7 +711,9 @@ nav.scrolled {
 
 .letter-text {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 25px;
+
     line-height: 1.6;
 }
 
@@ -603,25 +725,30 @@ nav.scrolled {
     margin-top: 70px;
 
     font-size: 35px;
+
     text-align: right;
 }
 
 .letter-signature span {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 25px;
+
     font-style: italic;
 }
 
 
 /* =========================
-   FINAL
+   FINAL SURPRISE
 ========================= */
 
 .final-section {
     min-height: 100vh;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -631,8 +758,11 @@ nav.scrolled {
 
 .final-content h2 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: clamp(50px, 7vw, 100px);
+
     font-weight: 400;
+
     line-height: 0.95;
 
     margin-bottom: 50px;
@@ -642,6 +772,7 @@ nav.scrolled {
     display: none;
 
     max-width: 600px;
+
     margin: 80px auto 0;
 
     animation: reveal 1.2s ease;
@@ -652,13 +783,16 @@ nav.scrolled {
 }
 
 @keyframes reveal {
+
     from {
         opacity: 0;
+
         transform: translateY(30px);
     }
 
     to {
         opacity: 1;
+
         transform: translateY(0);
     }
 }
@@ -669,25 +803,33 @@ nav.scrolled {
 
 .secret h3 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 45px;
+
     font-weight: 400;
 }
 
 .secret p {
     color: #999;
+
     line-height: 2;
+
     font-size: 13px;
+
     margin-top: 20px;
 }
 
 .heart {
     font-size: 35px;
+
     margin: 40px;
 }
 
 .final-line {
     color: #f2eee8 !important;
+
     font-family: "Cormorant Garamond", serif;
+
     font-size: 25px !important;
 }
 
@@ -706,17 +848,21 @@ footer {
 
 .footer-logo {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 50px;
 }
 
 footer p {
     color: #777;
+
     font-size: 11px;
+
     margin-top: 15px;
 }
 
 .copyright {
     font-size: 9px;
+
     letter-spacing: 2px;
 }
 
@@ -739,7 +885,9 @@ footer p {
         display: flex;
 
         position: absolute;
+
         top: 75px;
+
         left: 0;
 
         width: 100%;
@@ -753,6 +901,7 @@ footer p {
 
     .hero h1 {
         font-size: 65px;
+
         letter-spacing: 3px;
     }
 
@@ -774,6 +923,7 @@ footer p {
 
     .eyes {
         grid-template-columns: 1fr;
+
         gap: 50px;
     }
 
@@ -800,5 +950,5 @@ footer p {
     .favorite-photo {
         height: 70vh;
     }
-}
 
+}
